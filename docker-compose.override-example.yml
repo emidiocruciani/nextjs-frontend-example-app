@@ -1,0 +1,6 @@
+services:
+
+  example-app-next:
+    volumes:
+      - "${PWD}/source:/app"
+

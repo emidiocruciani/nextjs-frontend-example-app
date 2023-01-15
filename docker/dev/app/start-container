@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [[ -z "${WWWUSER}" ]]; then
+  export WWWUSER=1000
+fi
+
+if [ $# -gt 0 ]; then
+    exec su-exec "${WWWUSER}" "$@"
+else
+    su-exec "${WWWUSER}" npm install
+
+    exec /usr/bin/supervisord -c /etc/supervisor.d/supervisord.ini
+fi

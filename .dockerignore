@@ -1,0 +1,17 @@
+**/.next
+**/node_modules
+
+**/.git
+**/.gitignore
+**/.gitkeep
+**/.gitattributes
+
+**/.env.example
+**/.env
+
+**/.idea
+**/.vscode
+**/.editorconfig
+
+**/README.md
+**/LICENSE
