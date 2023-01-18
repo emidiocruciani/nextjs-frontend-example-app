@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ -z "${WWWUSER}" ]]; then
+  export WWWUSER=1000
+fi
+
+su-exec "${WWWUSER}" npm run build
+
+exec /usr/bin/supervisord -c /etc/supervisor.d/supervisord.ini

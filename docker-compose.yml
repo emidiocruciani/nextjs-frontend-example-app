@@ -2,9 +2,9 @@ services:
 
   example-app-next:
     container_name: example_app_next
-    build: .
-    image: example-app/next-dev
     environment:
+      - NEXT_PUBLIC_URL=http://localhost:3000
       - NEXT_PUBLIC_BACKEND_URL=http://localhost:8080
+      - INTERNAL_BACKEND_URL=http://172.17.0.1:8080
     ports:
       - '127.0.0.1:3000:3000'

@@ -1,6 +1,21 @@
 services:
 
+  # DEVELOPMENT override config
   example-app-next:
+    build: 
+      context: .
+      target: development
+    image: example-app/next-dev
+    environment:
+    - NODE_ENV=development
     volumes:
       - "${PWD}/source:/app"
 
+  # PRODUCTION override config
+  # example-app-next:
+  #   build: 
+  #     context: .
+  #     target: production
+  #   image: example-app/next-prod
+  #   environment:
+  #   - NODE_ENV=production
